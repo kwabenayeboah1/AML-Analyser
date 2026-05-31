@@ -43,7 +43,9 @@ This workspace automatically ingests heavy judicial documents, cross-references 
 
 
 # The Hypothesis 
-Almost every great side project starts with a hypothesis and a sprinkle of humour — and this one was no different. A catch-up with my colleague and mentor turned into a challenge. He'd been independently researching the link between money laundering offences and the legal sector, using various LLMs to build a picture of the landscape. We'd both watched Better Call Saul and had a good laugh at the implied assumption that most — if not all — lawyers and solicitors are, shall we say, 'ethically flexible'. He challenged me to test the hypothesis myself and see what trends I could surface. What followed was two parallel builds: an App, and an AI Agent. This Repo covers the App that was created with Google AI Studio.
+Almost every great side project starts with a hypothesis and a sprinkle of humour — and this one was no different. A catch-up with my colleague and mentor turned into a challenge. He'd been independently researching the link between money laundering offences and the legal sector, using various LLMs to build a picture of the landscape. We'd both watched Better Call Saul and had a good laugh at the implied assumption that most — if not all — lawyers and solicitors are, shall we say, 'ethically flexible'. He challenged me to test the hypothesis myself and see what trends I could surface. What followed was two parallel builds: an App, and an AI Agent. 
+
+This repository covers the App that was created with Google AI Studio.
 
 
 ## Methodology

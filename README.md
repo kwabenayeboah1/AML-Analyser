@@ -3,7 +3,7 @@
 
   # AML Analysis & SIC Code Matching ⚖️📊
 
-This workspace automatically ingests heavy judicial documents (in PDF format), cross-references active entities against localized Standard Industrial Classification (SIC) codes, and detects Money Laundering exposure. This can be used to determine whether certain businesses are more involved in AML crimes and establish guardrails in future legislation regarding how AML can be prevented.
+This workspace automatically ingests heavy judicial documents, cross-references active entities against localized Standard Industrial Classification (SIC) codes, and detects Money Laundering exposure. This can be used to determine whether certain businesses are more involved in AML crimes and establish guardrails in future legislation regarding how AML can be prevented.
 
 ---
 
@@ -56,7 +56,7 @@ My mentor and I both ran the same case _'D v Law Society'_ through our respectiv
 
 The sample size so far is 55 cases, of which **14** returned AML convictions. This figure gets interesting when considering half of these cases (_seven_ cases in total) involved Solicitors/Legal Firms. 
 
-## Breakdown of Cases involving AML Offences where the Defendant was a Solicitor
+### Breakdown of the 7 Cases involving AML Offences where the Defendant was a Solicitor
 * **2 Cases** Involved Solicitors/Legal Bodies being convicted of ML offences
 * **3 Cases** Where this was alleged but the defendant was ultimately found not guilty, or a later judgement is to be made
 * **2 Cases** Where it was discussed as a precedent or weren't the charges that were brought forward

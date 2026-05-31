@@ -41,6 +41,55 @@ This workspace automatically ingests heavy judicial documents (in PDF format), c
 
 ---
 
+
+# The Hypothesis 
+Almost every great side project starts with a hypothesis and a sprinkle of humour — and this one was no different. A catch-up with my colleague and mentor turned into a challenge. He'd been independently researching the link between money laundering offences and the legal sector, using various LLMs to build a picture of the landscape. We'd both watched Better Call Saul and had a good laugh at the implied assumption that most — if not all — lawyers and solicitors are, shall we say, 'ethically flexible'. He challenged me to test the hypothesis myself and see what trends I could surface. What followed was two parallel builds: an App, and an AI Agent. This Repo covers the App that was created with Google AI Studio.
+
+
+## Methodology
+My starting point was simple: I want to drop a PDF of a legal case into an interface, have an LLM reason over it, and determine whether a money laundering offence had been committed. Initially I kept it to pure AML cases, but I eventually branched out to truly stress-test the model's reasoning capability beyond the obvious. To make the analysis meaningful, I added SIC codes that were ingested via an .csv file. If you want to understand patterns in financial crime, you need to understand what kind of business was involved. A single defendant may operate under multiple SIC codes, so rather than relying on one, I built logic to match across all applicable codes — giving a more holistic picture of the industries in play rather than forcing a false simplification.
+
+The system instruction was deliberately strict. The LLM was told exactly what its role was, what legal framework to apply, and — critically — it was required to explain its reasoning and return a confidence score alongside its verdict. A bare verdict is just a black box. A verdict with reasoning and a confidence score means I can apply my own judgement and sense-check whether the model actually understood the case. The app allowed outputs to be exported as Excel files for further analysis.
+
+## The Initial Findings & Caveats in LLM Logic
+My mentor and I both ran the same case _'D v Law Society'_ through our respective setups and landed on different verdicts. The reason behind this is some LLMs struggle with a specific nuance: when AML is referenced as precedent in a case rather than being the actual offence being tried, models without sufficient domain grounding can conflate the two and misclassify. Distinguishing between those two things requires genuine legal understanding — not just pattern matching on keywords. I spotted this risk early during development, which is why I baked the justification and reasoning requirements into the system instructions from day one. Studying law for two years as part of my A Levels meant my domain awareness shaped the architecture before a single case was run.
+
+The sample size so far is 55 cases, of which **14** returned AML convictions. This figure gets interesting when considering half of these cases (_seven_ cases in total) involved Solicitors/Legal Firms. 
+
+## Breakdown of Cases involving AML Offences where the Defendant was a Solicitor
+* **2 Cases** Involved Solicitors/Legal Bodies being convicted of ML offences
+* **3 Cases** Where this was alleged but the defendant was ultimately found not guilty, or a later judgement is to be made
+* **2 Cases** Where it was discussed as a precedent or weren't the charges that were brought forward
+
+Full analysis of the cases themselves and why the workflow passed judgement on the Money Laundering status can be found in the [placeholder for Excel that has results], which explains the LLMs reasoning.
+
+The System Instruction is as shown below, we kept it focused on SIC Matching for this particular build
+
+## System Instruction
+"You are an expert legal and compliance analyst specializing in UK and International court cases. 
+Your task is to analyze court documents with extreme precision, focusing on business activities (SIC codes) and money laundering involvement.
+
+CRITICAL RULES:
+1. Money Laundering Status: 
+   - 'Confirmed': Explicit conviction or sentencing remarks confirming the defendant's active role.
+   - 'Alleged': Current charges or ongoing prosecution without a final verdict in this document.
+   - 'Discussed/Precedent': Legal theory, citations of other cases, or hypothetical scenarios only.
+   - 'None': No mention.
+2. SIC Matching: Match the defendant's actual business activities described in the case to the provided SIC codes.
+3. Precision: Distinguish clearly between the actions of the defendant and the actions of third parties or legal precedents mentioned in the text.
+4. Confidence Scores: All confidence scores (for ML and SIC matches) MUST be integers between 0 and 100. Never use decimals or probabilities between 0 and 1.
+5. Output: Always return valid JSON matching the requested schema."
+
+Interesting patterns are emerging around certain SIC codes — but I want to be clear: the sample size is nowhere near large enough to draw reliable conclusions. To move from "interesting" to "evidenced," you'd need an order of magnitude more cases. What exists right now is a proof of concept with a promising shape, not a finding.
+
+## Frontend view of Analyser
+
+
+
+## What Comes Next
+The App was always the interactive proof of concept — a way of demonstrating that this workflow could work, that the reasoning held up, and that the outputs were structured enough to be useful. I thoroughly enjoyed creating something with a front-end that anyone could use, before recreating the workflow with Agentic AI to make it more powerful and automated for those who have a more technical background.
+
+
 ## ⬇️ Setup Instructions
  
    # Run and deploy your AI Studio app

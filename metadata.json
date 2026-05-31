@@ -1,0 +1,5 @@
+{
+  "name": "Anti Money Laundering Analyser",
+  "description": "Analyze court cases to identify and match Standard Industrial Classification (SIC) codes with accused entities, featuring percentage alignment and Excel export.",
+  "requestFramePermissions": []
+}

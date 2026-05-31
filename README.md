@@ -61,7 +61,7 @@ The sample size so far is 55 cases, of which **14** returned AML convictions. Th
 * **3 Cases** Where this was alleged but the defendant was ultimately found not guilty, or a later judgement is to be made
 * **2 Cases** Where it was discussed as a precedent or weren't the charges that were brought forward
 
-Full analysis of the cases themselves and why the workflow passed judgement on the Money Laundering status can be found in the [placeholder for Excel that has results], which explains the LLMs reasoning.
+Full analysis of the cases themselves and why the workflow passed judgement on the Money Laundering status can be found in the [AML Analysis Excel](Case_SIC_Analysis_All.xlsx), which explains the LLMs reasoning.
 
 The System Instruction is as shown below, we kept it focused on SIC Matching for this particular build
 
@@ -82,13 +82,29 @@ CRITICAL RULES:
 
 Interesting patterns are emerging around certain SIC codes — but I want to be clear: the sample size is nowhere near large enough to draw reliable conclusions. To move from "interesting" to "evidenced," you'd need an order of magnitude more cases. What exists right now is a proof of concept with a promising shape, not a finding.
 
-## Frontend view of Analyser
+# Frontend View of Analyser
+
+## Console View
+This is what the App's UI looks like, where a PDF (or .txt) can be ingested. Results are shown on the right hand side, with an option to re-upload a .csv with updated SIC codes.
+
+Analysis and Key Reasoning for cases can be read at a glance, alongside an overview of the case findings and the reasoning for the ML tagging.
+![Frontend II](Frontend%20II.png)
+
+---
+
+A view of all cases that have been scanned in the 'History' tab. Here you can view all cases at a glance and download the appropriate analysis of call cases (or a select few) into an Excel file for analysis offshore.
+![Frontend III](Frontend%20III.png)
+
+---
+
+Analysis and reasoning of the associated SIC Code. It provides the best fit and a confidence score, as well as context and reasoning.
+![Frontend I](Frontend%20I.png)
 
 
 
 ## What Comes Next
 The App was always the interactive proof of concept — a way of demonstrating that this workflow could work, that the reasoning held up, and that the outputs were structured enough to be useful. I thoroughly enjoyed creating something with a front-end that anyone could use, before recreating the workflow with Agentic AI to make it more powerful and automated for those who have a more technical background.
-
+![Agentic AI](Agentic%20AI.png)
 
 ## ⬇️ Setup Instructions
  

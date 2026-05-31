@@ -60,7 +60,9 @@ The sample size so far is 55 cases, of which **14** returned AML convictions. Th
 * **2 Cases** Involved Solicitors/Legal Bodies being convicted of ML offences
 * **3 Cases** Where this was alleged but the defendant was ultimately found not guilty, or a later judgement is to be made
 * **2 Cases** Where it was discussed as a precedent or weren't the charges that were brought forward
-
+<p align="center">
+  <img src="https://alternativemovieposters.com/wp-content/uploads/2017/05/chelsea_saul.jpg" width="500">
+</p>
 Full analysis of the cases themselves and why the workflow passed judgement on the Money Laundering status can be found in the [AML Analysis Excel](Case_SIC_Analysis_All.xlsx), which explains the LLMs reasoning.
 
 The System Instruction is as shown below, we kept it focused on SIC Matching for this particular build
